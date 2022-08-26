@@ -14,6 +14,16 @@ finish-args:
   - --filesystem=home
   - --talk-name=org.freedesktop.Notifications
   - --share=network
+
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: lib/ffmpeg
+    version: '21.08'
+    add-ld-path: .
+
+cleanup-commands:
+  - mkdir -p /app/lib/ffmpeg
+
 build-options:
   append-path: /usr/lib/sdk/node18/bin
   env:
@@ -53,7 +63,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/aandrew-me/ytdownloader-flatpak.git
-        commit: 87cf3d4a46230696260db8f88f77a93e3c29636f
+        commit: cd6af1ae8d12841f1ea2456d9c7b13d8714ed418
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
