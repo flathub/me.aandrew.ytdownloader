@@ -63,7 +63,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/aandrew-me/ytdownloader-flatpak.git
-        commit: 5a1a41def4bf8335cc16b22ad17e8961c0cb191e
+        commit: 0193fbe66e5020595326319332bf7088af72df7a
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
