@@ -41,17 +41,19 @@ modules:
       - npm install --offline
       # Build the app; in this example the `dist` script
       # in package.json runs electron-builder
+      - install -Dm777 ../bin/ffmpeg ffmpeg
+      - jq '.build = {"asar":"false"}' <<<$(<package.json) > package.json
       - |
         . ../flatpak-node/electron-builder-arch-args.sh
-        npm run dist -- $ELECTRON_BUILDER_ARCH_ARGS  --linux --dir
+        npm run dist -- $ELECTRON_BUILDER_ARCH_ARGS --linux --dir
       # Bundle app and dependencies
       - cp -a dist/linux*unpacked /app/main
 
-      - install -Dm644 me.aandrew.ytdownloader.metainfo.xml  /app/share/metainfo/me.aandrew.ytdownloader.metainfo.xml
+      - install -Dm755 flatpak/me.aandrew.ytdownloader.metainfo.xml /app/share/metainfo/me.aandrew.ytdownloader.metainfo.xml
 
-      - install -Dm644 me.aandrew.ytdownloader.desktop /app/share/applications/me.aandrew.ytdownloader.desktop
+      - install -Dm644 flatpak/me.aandrew.ytdownloader.desktop /app/share/applications/me.aandrew.ytdownloader.desktop
 
-      - install -Dm644 me.aandrew.ytdownloader.png /app/share/icons/hicolor/512x512/apps/me.aandrew.ytdownloader.png
+      - install -Dm644 resources/icon.png /app/share/icons/hicolor/512x512/apps/me.aandrew.ytdownloader.png
 
       - install -Dm644 resources/icons/256x256.png /app/share/icons/hicolor/256x256/apps/me.aandrew.ytdownloader.png
 
@@ -62,9 +64,12 @@ modules:
     subdir: main
     sources:
       - type: git
-        url: https://github.com/aandrew-me/ytdownloader-flatpak.git
-        commit: d56b85c318fe7256d21456c4dee3068f0dda1a67
+        url: https://github.com/aandrew-me/ytDownloader.git
+        commit: 991f82d505abfdd5b14c6a8e40f736482c79cd8a
         dest: main
+      - type: archive
+        url: https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n5.1-latest-linux64-gpl-5.1.tar.xz
+        md5: 5cc9fbae32c5054e2e60f2ce9776313c
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
