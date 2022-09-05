@@ -65,7 +65,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/aandrew-me/ytDownloader.git
-        commit: b8a0e9fa21314d674f61a082448c8c5dc2d60ef4
+        commit: f2b4f1c403876496b241a2a557e1d11a7f63edfe
         dest: main
       - type: archive
         url: https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n5.1-latest-linux64-gpl-5.1.tar.xz
