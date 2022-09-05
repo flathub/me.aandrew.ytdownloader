@@ -69,7 +69,7 @@ modules:
         dest: main
       - type: archive
         url: https://github.com/yt-dlp/FFmpeg-Builds/releases/download/latest/ffmpeg-n5.1-latest-linux64-gpl-5.1.tar.xz
-        md5: 320984b5f7e51d7447696d9300dc485b
+        md5: 5cc9fbae32c5054e2e60f2ce9776313c
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
