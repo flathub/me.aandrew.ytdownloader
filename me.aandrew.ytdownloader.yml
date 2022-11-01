@@ -61,7 +61,7 @@ modules:
         dest: main
       - type: archive
         url: https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2022-10-31-16-11/ffmpeg-n5.1.2-4-gf5455889fd-linux64-gpl-5.1.tar.xz
-        sha256: f87f12bb8f0f1d86250898964e7e03ff05d409afc462c32a091b18e732d226b2
+        sha256: 2b20e6779d712b0229ffc3c0a7a19b6406919b03d887681b613f0251951fcc50
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
