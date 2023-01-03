@@ -57,11 +57,11 @@ modules:
     sources:
       - type: git
         url: https://github.com/aandrew-me/ytDownloader.git
-        commit: 06e845e364e6846ec770f99356799e7ea05c6b09
+        commit: b42c5867303b36f2f843252a45403994daa66014
         dest: main
       - type: archive
-        url: https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2022-10-31-16-11/ffmpeg-n5.1.2-4-gf5455889fd-linux64-gpl-5.1.tar.xz
-        sha256: 2b20e6779d712b0229ffc3c0a7a19b6406919b03d887681b613f0251951fcc50
+        url: https://github.com/yt-dlp/FFmpeg-Builds/releases/download/autobuild-2023-01-02-12-52/ffmpeg-n5.1.2-9-g807afa59cc-linux64-gpl-5.1.tar.xz
+        sha256: 41a47e5cba6784c0cf23a429ea28828746b36776e7245614a558f9ab6eb5143a
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
