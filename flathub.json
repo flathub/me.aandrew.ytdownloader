@@ -1,5 +1,5 @@
 {
     "end-of-life": "Application has been renamed to io.github.aandrew_me.ytdn",
     "end-of-life-rebase": "io.github.aandrew_me.ytdn",
-    "skip-appstream-check": true
+    "only-arches": ["x86_64"]
 }
